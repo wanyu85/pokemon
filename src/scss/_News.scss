@@ -1,0 +1,47 @@
+.news {
+    height: 500px;
+    // background: linear-gradient(
+    //     75deg,
+    //     rgba(195, 180, 207, 0.8),
+    //     rgba(139, 164, 192, 0.8)
+    // );
+    background-color: $body-bgc;
+}
+
+.news-title {
+    @extend %center;
+    padding-top: 50px;
+
+    h1 {
+        font-family: "Roboto Slab", serif;
+        font-size: 50px;
+        font-weight: 700;
+        color: $dark-black;
+        margin-right: auto;
+    }
+}
+
+.news-container {
+    max-height: 450px;
+    border-bottom: 1px solid $light-black;
+}
+
+.news-scroll {
+    overflow: hidden;
+    border-top: 1px solid $light-black;
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    transform: rotate(-90deg) translate3d(0, -100vh, 0); //旋轉並垂直上移
+    transform-origin: right top; //旋轉的中心點
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    height: 150vw;
+    perspective: 1px; // 透視深度
+    transform-style: preserve-3d; //轉換時保留3d效果
+}

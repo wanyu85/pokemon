@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./scss/App.scss";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Types from "./pages/Types";
+import styled from "styled-components";
+import News from "./pages/News";
+import Product from "./pages/Product";
+import Pokemon from "./pages/Pokemon";
+import PostProvider from "./pages/PostProvider";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <PostProvider>
+                <Header />
+                <Home />
+                <News />
+                <Product />
+                <Types />
+                <Pokemon />
+            </PostProvider>
+        </BrowserRouter>
+    );
 }
 
 export default App;

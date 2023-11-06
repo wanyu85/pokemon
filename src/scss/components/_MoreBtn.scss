@@ -1,0 +1,43 @@
+.more-btn {
+    position: relative;
+    width: auto;
+    background: none;
+    border: none;
+    overflow: hidden;
+    font-size: 15px;
+
+    div {
+        display: flex;
+        flex-direction: row;
+        padding: 0 1px;
+    }
+
+    div,
+    &::before {
+        font-weight: bold;
+        text-transform: uppercase; //轉換成大寫
+        transition: all 0.2s ease-in-out;
+    }
+
+    &::before {
+        content: attr(data-hover);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+
+    &:hover {
+        div {
+            opacity: 0;
+            transform: translate(50%, 0);
+        }
+    }
+
+    &:hover::before {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

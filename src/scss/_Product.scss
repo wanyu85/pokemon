@@ -1,0 +1,122 @@
+.product-cover {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../image/1177507.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.product {
+    background-color: #f9f7f4;
+    width: 100vw;
+    height: auto;
+    padding: 50px;
+    border-bottom: 2px solid $light-black;
+
+    &:hover {
+        background-color: $dark-black;
+
+        .product-moreBtn {
+            color: $light;
+
+            path {
+                fill: $light;
+            }
+        }
+
+        .text-underline {
+            color: $light;
+        }
+
+        .product-btn::before {
+            background-color: $light;
+            width: 100%;
+        }
+    }
+}
+
+.product-title {
+    padding-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+
+    .text-underline {
+        @extend %hover-underline;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .product-moreBtn {
+        margin-bottom: 10px;
+    }
+}
+
+.product-img {
+    max-width: 100%;
+    height: 450px;
+    overflow: hidden;
+    transition: all 1s ease-out;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    div {
+        object-fit: fill;
+        transform: scale(1.1);
+    }
+
+    div:hover {
+        transform: scale(1.2);
+    }
+}
+
+.product-img2 {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    .product-story {
+        @extend %center;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        button {
+            border-radius: 20px;
+            padding: 5px 30px;
+            font-weight: bold;
+            margin-top: 100px;
+            display: none;
+        }
+
+        &:hover {
+            .product-ballIcon,
+            button {
+                display: block;
+            }
+        }
+    }
+
+    &:hover {
+        .product-story {
+            backdrop-filter: brightness(0.5);
+            color: $light;
+        }
+    }
+}
+
+[data-hover="更多系列"] {
+    color: $light;
+}

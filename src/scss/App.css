@@ -1,0 +1,19 @@
+.navbar-toggler {
+  border-radius: 50px;
+  transition: 0.6s ease;
+}
+.navbar-toggler span {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0px;
+}
+
+.navbar-toggler:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+.navbar-toggler:focus {
+  color: aqua;
+  box-shadow: 0 0 0 0;
+}/*# sourceMappingURL=App.css.map */

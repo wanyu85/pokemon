@@ -1,0 +1,132 @@
+.pokemonCard {
+    @extend %center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 1px solid $light-black;
+    border-left: 1px solid $light-black;
+    .vstack {
+        @extend %center;
+        margin-top: 50px;
+    }
+
+    .number {
+        background-color: $pokemon-dark-blue;
+        color: $light;
+        padding: 5px 10px;
+        border-radius: 50px;
+        max-width: fit-content;
+        font-size: 16px;
+    }
+
+    .name {
+        color: $pokemon-dark-blue;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .type-text {
+        margin-top: -65px;
+        margin-bottom: 40px;
+    }
+
+    .type {
+        color: $pokemon-dark-blue;
+        font-size: 17px;
+    }
+
+    .comma {
+        font-size: 30px;
+        color: $pokemon-dark-blue;
+        margin: 0 10px;
+    }
+
+    &:nth-child(3n + 3) {
+        border-right: 1px solid $light-black;
+        &::after {
+            width: 97%;
+        }
+    }
+
+    &:nth-child(-n + 3) {
+        border-top: 1px solid $light-black;
+        &::after {
+            width: 97%;
+        }
+    }
+
+    &:hover {
+        background-color: $dark-black;
+
+        .pokemonCard-content {
+            .icon {
+                display: block;
+            }
+
+            img {
+                display: none;
+            }
+        }
+        .pokemonCard-text {
+            display: block;
+            p {
+                color: $light;
+            }
+        }
+
+        .number {
+            background-color: $pokemon-dark-yellow;
+            color: $dark-black;
+        }
+
+        .name,
+        .type {
+            color: $light;
+        }
+
+        .comma {
+            color: $light;
+        }
+    }
+}
+
+.pokemonCard-content {
+    @extend %center;
+    margin-top: 40px;
+    height: 250px;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.pokemonCard-text {
+    display: none;
+    position: absolute;
+    top: 40%;
+    font-size: 17px;
+    font-weight: bold;
+    overflow: auto;
+    width: 80%;
+    height: 55%;
+    padding: 5%;
+    z-index: 2;
+
+    /* 捲軸寬度 */
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    /* 捲軸本體 */
+    &::-webkit-scrollbar-thumb {
+        background: gray;
+        border-radius: 50px;
+    }
+
+    /* 捲軸底 */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}

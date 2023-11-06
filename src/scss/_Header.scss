@@ -1,0 +1,114 @@
+@import "maps";
+
+.scrollColor {
+    filter: invert(1);
+}
+
+.scrollBgc {
+    background-color: $body-bgc;
+    box-shadow: 3px 3px 3px $hover-shadow;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.navbar-brand {
+    @extend %focus-border, %font;
+    color: $light;
+    font-size: 40px;
+    &:hover {
+        color: $light;
+    }
+}
+
+.offcanvas-backdrop {
+    opacity: 0 !important;
+}
+
+.navbar-toggler {
+    @extend %focus-border, %button-animation;
+    margin-right: auto;
+    border-color: $light;
+    &:hover {
+        background-color: $hover-shadow;
+    }
+
+    span {
+        width: 15px;
+        height: 15px;
+        margin: 0 -5px 5px;
+
+        filter: invert(1); //反轉顏色
+    }
+}
+
+.offcanvas {
+    background-color: $light;
+    // border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 50%;
+}
+
+.offcanvas-body {
+    .title {
+        @extend %font-zh;
+    }
+}
+
+.offcanvas-title {
+    @extend %focus-border, %font;
+    color: $pokemon-dark-blue;
+    font-size: 40px;
+    &:hover {
+        color: $pokemon-dark-blue;
+    }
+}
+
+.collapse-content {
+    margin-left: 50px;
+    p {
+        @extend %font-zh;
+        font-size: 1.3rem;
+        color: $pokemon-dark-blue;
+        &:hover {
+            color: $gray-600;
+        }
+    }
+}
+
+.btn-close {
+    @extend %focus-border, %button-animation;
+}
+
+.nav-link {
+    padding: 0 40px;
+
+    p {
+        @extend %hover-underline;
+        color: $light;
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.icon-style {
+    button {
+        @extend %button-animation;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 10px 16px 10px;
+        background-color: rgba($light, 0.2);
+
+        &:hover {
+            background-color: $hover-shadow;
+        }
+
+        a {
+            width: 20px;
+            height: 20px;
+
+            & path {
+                fill: $light;
+            }
+        }
+    }
+}

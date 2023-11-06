@@ -1,0 +1,49 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps"; // **Newly added!**
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities/api";
+
+$hover-shadow: rgba($gray-500, 0.4);
+
+$light-white: rgba($light, 0.2); //線框色
+$light-black: rgba(19, 19, 19, 0.2); //線框色
+$dark-black: rgb(19, 19, 19);
+$body-bgc: #f9f7f4;
+
+$pokemon-dark-blue: #0f224a;
+$pokemon-dark-yellow: #ffbb00;
+
+$attributes-card-button: (
+    color1: rgb(255, 208, 0),
+    color2: rgb(148, 199, 125),
+    color3: rgb(112, 91, 150),
+    color4: rgb(182, 41, 41),
+    color5: rgb(230, 192, 136),
+    color6: rgb(125, 188, 199),
+    color7: rgb(68, 139, 78),
+    color8: #ffffff,
+    color9: rgb(230, 227, 88),
+    color10: rgb(192, 127, 66),
+    color11: rgb(209, 198, 136),
+    color12: rgb(66, 104, 72),
+    color13: rgb(194, 142, 166),
+    color14: rgb(100, 100, 100),
+    color15: rgb(100, 121, 97),
+    color16: rgb(118, 146, 187),
+    color17: rgb(183, 184, 133),
+    color18: rgb(212, 130, 171),
+    color19: rgb(36, 7, 8),
+);
+
+// ! @each 變數, 值 in <map>
+@each $button-item, $button-color in $attributes-card-button {
+    ##{$button-item}:hover {
+        button {
+            background: lighten($button-color, 15%);
+        }
+        border: 1px solid $button-color;
+    }
+}

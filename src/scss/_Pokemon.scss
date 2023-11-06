@@ -1,0 +1,32 @@
+.pokemon-container {
+    @extend %font;
+    width: 100vw;
+    height: auto;
+    font-size: 50px;
+    border-collapse: collapse;
+    padding-top: 150px;
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .text {
+        @extend %font-zh;
+        font-size: 45px;
+        color: $pokemon-dark-blue;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+}
+
+.pokemon-card {
+    margin-top: 8px;
+}
+
+.pagination-container {
+    @extend %center;
+    margin: 50px 0;
+}

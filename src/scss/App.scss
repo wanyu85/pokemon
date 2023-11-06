@@ -1,0 +1,210 @@
+@import "bootstrap";
+@import "maps";
+// 元件
+@import "/src/scss/components/_NewCard";
+@import "/src/scss/components/_MoreBtn";
+@import "/src/scss/components/_ProductBtn";
+@import "/src/scss/components/_PokemonScroll";
+@import "/src/scss/components/_PokemonCard";
+@import "/src/scss/components/_Pagination";
+@import "/src/scss/components/_TypeCard";
+@import "/src/scss/components/_Search";
+// 頁面
+@import "_Header";
+@import "_Home";
+@import "_Types";
+@import "_News";
+@import "_Product";
+@import "_Pokemon";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $dark-black;
+}
+
+a {
+    text-decoration: none;
+}
+
+// 隱藏滾動條
+::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-button {
+    width: 1px;
+    height: 1px;
+}
+
+@media (max-width: 992px) {
+    .news-card:last-child {
+        margin-bottom: 350px;
+    }
+    .pokemonCard {
+        .name {
+            font-size: 20px;
+        }
+        .type {
+            font-size: 15px;
+        }
+
+        .icon {
+            position: absolute;
+            bottom: 15%;
+            width: 60%;
+            height: auto;
+        }
+    }
+    .pokemonCard-text {
+        height: 45%;
+        margin-top: 30px;
+    }
+
+    .offcanvas-body {
+        .title {
+            font-size: 1.5rem;
+            color: $pokemon-dark-blue;
+            font-weight: bold;
+            margin: 10px auto;
+
+            &:hover {
+                color: $pokemon-dark-yellow;
+
+                path {
+                    fill: $pokemon-dark-yellow;
+                }
+            }
+        }
+    }
+
+    .types-title {
+        font-size: 3rem;
+        left: 30%;
+    }
+
+    .types {
+        width: 100vw;
+    }
+
+    .types-item {
+        height: 100vw;
+        padding-top: 280px;
+    }
+}
+
+%font {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+%font-zh {
+    font-family: "Zen Maru Gothic", serif;
+}
+
+// 置中
+%center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// BS focus預設邊框清除
+%focus-border {
+    &:focus {
+        color: $light;
+        box-shadow: 0 0 0 0;
+        border: 0;
+    }
+}
+
+// 標題滑鼠懸停效果
+%hover-underline {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 0%;
+        height: 1px;
+        background-color: $light;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 0.3s linear;
+        color: $light;
+    }
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+// 按鍵 hover
+%button-animation {
+    transition: 0.6s ease;
+    border-radius: 50%;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+// 首頁圖片動畫效果
+@keyframes slide {
+    // 圖片進場
+    10% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 1;
+    }
+    // 圖片退場
+    30% {
+        opacity: 0;
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes ball {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100px);
+    }
+}
+
+// 字體輪播動畫
+@keyframes scroll1 {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll2 {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+// html {
+//     height: 100%;
+// }
+
+// body {
+//     background-image: url(../images/women3.jpg);
+//     background-repeat: no-repeat; //不會重複
+//     background-attachment: fixed; //不會隨著頁面滾動
+//     background-position: center;
+//     background-size: cover;
+// }

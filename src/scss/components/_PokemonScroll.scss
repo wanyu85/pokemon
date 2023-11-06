@@ -1,0 +1,21 @@
+.pokemon-scroll {
+    background-color: $dark-black;
+    display: flex;
+    font-size: 45px;
+    font-weight: 700;
+    width: 100%;
+    overflow: hidden;
+    div {
+        animation: scroll1 5s linear infinite, scroll2 5s linear infinite;
+        padding: 10px;
+    }
+
+    .text-shadow1 {
+        text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+    }
+
+    .text-shadow2 {
+        color: rgba(0, 0, 0, 0.6);
+        text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+    }
+}

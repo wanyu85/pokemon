@@ -1,0 +1,35 @@
+.product-btn {
+    position: relative;
+    border: none;
+    font-size: 25px;
+    font-weight: 700;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 50px;
+    min-width: 100px;
+    text-transform: uppercase;
+
+    span {
+        color: $light;
+        mix-blend-mode: difference; //!文字智慧適配背景顏色
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        background: $dark-black;
+        // cubic-bezier(開始 X ,開始 Y ,結束 X,結束 Y)
+        transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        margin-top: 10px;
+    }
+
+    &:hover::before {
+        background-color: $light;
+        width: 100%;
+    }
+}

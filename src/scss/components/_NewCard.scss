@@ -1,0 +1,74 @@
+.news-card {
+    width: 450px;
+    height: 150px;
+    border: 1px solid $light-black;
+    padding: 30px;
+    color: $dark-black;
+    cursor: pointer;
+
+    transform: rotate(90deg);
+
+    small {
+        font-size: 0.5rem;
+        font-weight: 600;
+    }
+
+    p {
+        overflow: hidden;
+        text-overflow: ellipsis; //溢出的文字加上省略號
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1; //限制區塊容器中內容為指定行數
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    &:hover {
+        background-color: $light-white;
+
+        .more-btn {
+            div {
+                opacity: 0;
+                transform: translate(50%, 0);
+            }
+        }
+
+        .more-btn::before {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    &:first-child {
+        margin-top: 740px;
+    }
+
+    &:last-child {
+        margin-bottom: 1150px;
+        margin-top: 400px;
+    }
+
+    &:not(:first-child):not(:last-child) {
+        margin-top: 400px;
+    }
+}
+
+.news-card-box {
+    position: relative;
+    text-align: end;
+    margin-right: 20px;
+
+    .news-line::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        bottom: 78%;
+        left: 0;
+        background: $light-black;
+        width: 75%;
+    }
+}
+
+.news-moreBtn {
+    margin-bottom: 50px;
+}

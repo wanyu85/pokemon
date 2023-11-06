@@ -1,0 +1,89 @@
+.types-card {
+    @extend %center;
+    color: $light-white;
+    // max-width: 50%;
+    // max-height: 50%;
+
+    font-size: 20px;
+    border: 1px solid $light-white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px 30px;
+
+    position: relative;
+    flex-direction: column;
+    // overflow: hidden;
+    transform: rotate(90deg);
+
+    width: 200px;
+    height: 200px;
+    padding: 50px 50px;
+
+    .types-card-name {
+        @extend %center;
+        margin-right: 10px;
+        width: 250px;
+        height: 250px;
+
+        span {
+            color: $light-white;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    button {
+        @extend %center;
+        border-radius: 20px;
+        padding: 0 10px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0 10px 20px 0;
+        border: 0;
+        font-size: 16px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, width 0.8s linear;
+
+        span {
+            margin-right: 5px;
+            display: none;
+        }
+    }
+
+    &:hover {
+        border: 1px solid $light;
+
+        .types-card-name {
+            .pokemonBall,
+            span {
+                display: none;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+
+        button {
+            width: 100px;
+
+            span {
+                display: inline;
+            }
+        }
+    }
+}
